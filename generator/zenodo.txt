@@ -1,0 +1,24 @@
+https://zenodo.org/records/10900202
+
+A dataset of primary nasopharyngeal carcinoma MRI with multi-modalities segmentation
+Creators
+Li, Yin1
+ 
+Chen, Nutan2
+ORCID icon
+Description
+This dataset presents a collection of MRI scans from 277 patients diagnosed with primary Nasopharyngeal Carcinoma (NPC), accompanied by radiologists' annotated segmentations. Each scan includes T1-weighted, T2-weighted, and contrast-enhanced T1-weighted axial slices, providing detailed insights into tumor morphology. The annotations precisely delineate gross tumor volume and boundaries. The contemporary clinical and laboratory diagnoses with follow-up survival are contained in the dataset.
+
+Collected with ethical approval, all data is anonymized to ensure privacy and confidentiality. For questions please contact Yin Li.
+
+Please cite this work as follows:
+@misc{li2024dataset,
+      title={A dataset of primary nasopharyngeal carcinoma MRI with multi-modalities segmentation}, 
+      author={Yin Li and Qi Chen and Kai Wang and Meige Li and Liping Si and Yingwei Guo and Yu Xiong and Qixing Wang and Yang Qin and Ling Xu and Patrick van der Smagt and Jun Tang and Nutan Chen},
+      year={2024},
+      eprint={2404.03253},
+      archivePrefix={arXiv},
+      primaryClass={eess.IV}
+}
+
+Files
