@@ -1,8 +1,6 @@
 <h2>Tensorflow-Image-Segmentation-Augmented-Nasopharyngeal-Carcinoma-T2WI (2024/07/27)</h2>
 
-This is the first experiment of Image Segmentation for 
-
-<a href="https://zenodo.org/records/10900202">
+This is the first experiment of Image Segmentation for <a href="https://zenodo.org/records/10900202">
 A dataset of primary nasopharyngeal carcinoma MRI with multi-modalities segmentation
 </a>
  based on
@@ -110,7 +108,7 @@ Please cite this work as follows:<br>
 </pre>
 
 <br>
-<br>
+
 
 <h3>2 Nasopharyngeal-Carcinoma-T2WI ImageMask Dataset</h3>
 <h3>2.1 Download nasopharyngeal carcinoma MRI dataset</h3>
@@ -159,7 +157,7 @@ if __name__ == "__main__":
     # Enabled image_normalization flag.
     image_normalize=True
 
-    # Disabled an offline augmentatin flag.
+    # Disabled an offline augmentation flag.
     augmentation = False
   
     generator = ImageMaskDatasetGenerator(size = size, 
@@ -169,7 +167,7 @@ if __name__ == "__main__":
                                           augmentation = augmentation)
 </pre>
 The image_normalize parameter for ImageMaskDatasetGenerator is very significant to generate clear 
-images.You may also enable dataset augmentation to generate larger size of datase.<br>
+images.You may also enable dataset augmentation to generate larger size of dataset.<br>
 <pre>
     augmentation = True
 </pre>
