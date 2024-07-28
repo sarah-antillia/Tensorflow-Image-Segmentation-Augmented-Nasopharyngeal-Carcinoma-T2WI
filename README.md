@@ -33,8 +33,8 @@ For more details, please refer to <a href="./src/ImageMaskAugmentor.py">ImageMas
 
 <hr>
 <b>Actual Image Segmentation</b><br>
-The inferred green-colorized masks predicted by our segmentation model trained on the White-Blood-Cell ImageMaskDataset appear similar to the ground truth masks, 
-but lack precision in some areas. 
+The inferred green-colorized masks predicted by our segmentation model trained on the White-Blood-Cell ImageMaskDataset 
+look somewhat similar to the ground truth masks, but they lack precision in certain areas. 
 <table>
 <tr>
 <th>Input: image</th>
