@@ -1,5 +1,5 @@
 ; train_eval_infer.config
-; 2024/07/27 (C) antillia.com
+; 2024/07/26 (C) antillia.com
 
 [model]
 model          = "TensorflowUNet"
@@ -56,8 +56,8 @@ num_infer_images       = 1
 create_backup  = False
 
 learning_rate_reducer = True
-reducer_factor     = 0.3
-reducer_patience   = 5
+reducer_factor     = 0.2
+reducer_patience   = 4
 save_weights_only  = True
 
 [eval]
@@ -97,8 +97,8 @@ augmentation = True
 vflip    = True
 hflip    = True
 rotation = True
-angles   = [30, 60, 90, 120, 180, 210, 240, 270, 300,330]
-shrinks  = [0.8]
+angles   = [90, 180, 270, 300,]
+shrinks  = [0.6, 0.8]
 shears   = [0.1]
 
 deformation = True
@@ -109,7 +109,7 @@ barrdistortion = True
 
 [deformation]
 alpah     = 1300
-sigmoids  = [8.0,]
+sigmoids  = [8.0]
 
 [distortion]
 gaussian_filter_rsigma= 40

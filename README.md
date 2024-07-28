@@ -1,4 +1,7 @@
-<h2>Tensorflow-Image-Segmentation-Augmented-Nasopharyngeal-Carcinoma-T2WI (2024/07/27)</h2>
+<h2>Tensorflow-Image-Segmentation-Augmented-Nasopharyngeal-Carcinoma-T2WI (Updated: 2024/07/28)</h2>
+<li>2024/07/28: Updated train_eval_infer.config.</li>
+<li>2024/07/28: Updated <a href="./generator/split_master.py">split_master.py</a> to change output_dir.</li>
+
 
 This is the first experiment of Image Segmentation for <a href="https://zenodo.org/records/10900202">
 A dataset of primary nasopharyngeal carcinoma MRI with multi-modalities segmentation
@@ -77,7 +80,7 @@ The original dataset used here was obtained from zenodo.org: <a href="https://ze
 A dataset of primary nasopharyngeal carcinoma MRI with multi-modalities segmentation. 
 </a><br>
 <b>Creators</b>
-Li, Yin1, Chen, Nutan2
+Li, Yin, Chen, Nutan
 <br>
 <a href="https://doi.org/10.5281/zenodo.10900202">https://doi.org/10.5281/zenodo.10900202</a><br>
 
@@ -223,7 +226,7 @@ This simply runs the following command.<br>
 <hr>
 <pre>
 ; train_eval_infer.config
-; 2024/07/26 (C) antillia.com
+; 2024/07/27 (C) antillia.com
 
 [model]
 model          = "TensorflowUNet"
@@ -280,8 +283,8 @@ num_infer_images       = 1
 create_backup  = False
 
 learning_rate_reducer = True
-reducer_factor     = 0.2
-reducer_patience   = 4
+reducer_factor     = 0.3
+reducer_patience   = 5
 save_weights_only  = True
 
 [eval]
@@ -321,8 +324,8 @@ augmentation = True
 vflip    = True
 hflip    = True
 rotation = True
-angles   = [90, 180, 270, 300,]
-shrinks  = [0.6, 0.8]
+angles   = [30, 60, 90, 120, 180, 210, 240, 270, 300,330]
+shrinks  = [0.8]
 shears   = [0.1]
 
 deformation = True
@@ -333,7 +336,7 @@ barrdistortion = True
 
 [deformation]
 alpah     = 1300
-sigmoids  = [8.0]
+sigmoids  = [8.0,]
 
 [distortion]
 gaussian_filter_rsigma= 40
@@ -384,8 +387,8 @@ Enabled learing_rate_reducer callback.
 <pre> 
 [train]
 learning_rate_reducer = True
-reducer_factor     = 0.2
-reducer_patience   = 4
+reducer_factor     = 0.3
+reducer_patience   = 5
 </pre>
 <b>Early stopping callback</b><br>
 Enabled early stopping callback with patience parameter.
@@ -410,9 +413,9 @@ By using this EpochChangeInference callback, on every epoch_change, the inferenc
 <img src="./projects/TensorflowSlightlyFlexibleUNet/Nasopharyngeal-Carcinoma-T2WI/asset/epoch_change_infer.png" width="1024" height="auto"><br>
 <br>
 <br>
-In this case, the training process stopped at epoch 47 by EarlyStopping Callback as shown below.<br>
+In this case, the training process stopped at epoch 71 by EarlyStopping Callback as shown below.<br>
 <b>Training console output</b><br>
-<img src="./projects/TensorflowSlightlyFlexibleUNet/Nasopharyngeal-Carcinoma-T2WI/asset/train_console_output_at_epoch_47.png" width="720" height="auto"><br>
+<img src="./projects/TensorflowSlightlyFlexibleUNet/Nasopharyngeal-Carcinoma-T2WI/asset/train_console_output_at_epoch_71.png" width="720" height="auto"><br>
 <br>
 <br>
 <a href="./projects/TensorflowSlightlyFlexibleUNet/Nasopharyngeal-Carcinoma-T2WI/eval/train_metrics.csv">train_metrics.csv</a><br>
@@ -436,17 +439,22 @@ python ../../../src/TensorflowUNetEvaluator.py ./train_eval_infer_aug.config
 </pre>
 
 <b>Evaluation console output</b><br>
-<img src="./projects/TensorflowSlightlyFlexibleUNet/Nasopharyngeal-Carcinoma-T2WI/asset/evaluate_console_output_at_epoch_47.png" width="720" height="auto">
+<img src="./projects/TensorflowSlightlyFlexibleUNet/Nasopharyngeal-Carcinoma-T2WI/asset/evaluate_console_output_at_epoch_71.png" width="720" height="auto">
 <br><br>
 
 <a href="./projects/TensorflowSlightlyFlexibleUNet/Nasopharyngeal-Carcinoma-T2WI/evaluation.csv">evaluation.csv</a><br>
 
-The loss (bce_dice_loss) for this test is not so low, and dice_coef not high.<br>
+The loss (bce_dice_loss) for this test is  not so low, and dice_coef not high.<br>
+<pre>
+loss,0.3294
+dice_coef,0.3977
+</pre>
+
+Previous result:<br>
 <pre>
 loss,0.3383
 dice_coef,0.3766
 </pre>
-
 
 <h3>
 5 Inference

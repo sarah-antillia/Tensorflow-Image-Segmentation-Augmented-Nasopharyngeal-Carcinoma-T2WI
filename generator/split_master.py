@@ -97,8 +97,8 @@ if __name__ == "__main__":
     
     images_dir = "./Nasopharyngeal-Carcinoma-" + type + "WI/images/"
     masks_dir  = "./Nasopharyngeal-Carcinoma-" + type + "WI/masks/"
-    
-    output_dir = "../Nasopharyngeal-Carcinoma-" + type + "WI/"
+    # 2024/07/28 Modified the following line to fixed a bug. 
+    output_dir = "../dataset/Nasopharyngeal-Carcinoma-" + type + "WI/"
     if os.path.exists(output_dir):
       shutil.rmtree(output_dir)
     if not os.path.exists(output_dir):
