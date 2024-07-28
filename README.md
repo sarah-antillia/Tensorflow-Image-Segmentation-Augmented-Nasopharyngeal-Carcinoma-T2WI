@@ -1,7 +1,7 @@
 <h2>Tensorflow-Image-Segmentation-Augmented-Nasopharyngeal-Carcinoma-T2WI (Updated: 2024/07/28)</h2>
 <li>2024/07/28: Updated train_eval_infer.config.</li>
 <li>2024/07/28: Updated <a href="./generator/split_master.py">split_master.py</a> to change output_dir.</li>
-
+<br>
 
 This is the first experiment of Image Segmentation for <a href="https://zenodo.org/records/10900202">
 A dataset of primary nasopharyngeal carcinoma MRI with multi-modalities segmentation
